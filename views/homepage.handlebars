@@ -6,7 +6,7 @@
         class="d-flex flex-row justify-content-between align-items-center blog-header"
       >
         <h2> <a href="/blog/{{id}}">{{title}}</a></h2>
-        <p>Posted by {{name}} on {{createdAt}}</p>
+        <p>Posted by {{name}} on {{format_date createdAt}}</p>
       </div>
       <div class="blog-body">
         <p>{{description}}</p>

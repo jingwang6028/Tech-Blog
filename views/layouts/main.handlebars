@@ -35,6 +35,9 @@
     <main>
       {{{body}}}
     </main>
-    <script src=""></script>
+
+    {{#if loggedIn}}
+      <script src="/js/logout.js"></script>
+    {{/if}}
   </body>
 </html>

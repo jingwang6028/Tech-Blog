@@ -1,0 +1,71 @@
+:root {
+  --dark: #23140d;
+  --light: #dbead3;
+  --grey: #6c6b5e;
+}
+
+body {
+  background-color: var(--light);
+}
+
+header {
+  background-color: var(--dark);
+  height: 150px;
+  padding-left: 50px;
+  padding-top: 10px;
+}
+.nav-link {
+  color: var(--light);
+  font-size: 25px;
+}
+h1 {
+  display: inline-block;
+  background-color: var(--light);
+  margin-left: 20px;
+  margin-top: 15px;
+  padding: 5px 20px;
+  border-radius: 8px;
+  box-shadow: 8px 5px var(--grey);
+  font-size: 40px;
+  font-weight: 900;
+  color: var(--dark);
+}
+
+.blog {
+  border: 4px solid var(--dark);
+  height: 140px;
+  width: 100%;
+}
+
+.blog-header,
+.login-header {
+  height: 50px;
+  background-color: var(--dark);
+}
+
+.blog-header h2 a,
+.blog-header p,
+.login-header h2 {
+  color: var(--light);
+}
+
+.blog-header h2,
+.login-header h2 {
+  margin-left: 20px;
+  font-size: 25px;
+  font-weight: 900;
+}
+
+.blog-header p {
+  margin-right: 20px;
+}
+
+.blog-body p {
+  color: var(--dark);
+  margin: 10px 10px;
+}
+
+.login,
+.signup {
+  border: 4px solid var(--dark);
+}
