@@ -15,7 +15,7 @@ Blog.init(
       type: DataTypes.STRING,
       allowNull: false,
     },
-    content: {
+    description: {
       type: DataTypes.TEXT,
       allowNull: false,
     },
@@ -29,10 +29,12 @@ Blog.init(
     createdAt: {
       type: DataTypes.DATE,
       defaultValue: DataTypes.NOW,
+      allowNull: false,
     },
     updatedAt: {
       type: DataTypes.DATE,
       defaultValue: DataTypes.NOW,
+      allowNull: false,
     },
   },
   {
