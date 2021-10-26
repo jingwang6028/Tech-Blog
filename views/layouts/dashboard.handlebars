@@ -21,23 +21,22 @@
           <a class="nav-link" href="/dashboard">Dashboard</a>
         </li>
         <li class="nav-item">
-          {{#if logged_in}}
-            <a class="nav-link" href="#">Logout</a>
-          {{else}}
-            <a class="nav-link" href="/login">Login</a>
-          {{/if}}
+
+          <a class="nav-link" href="#">Logout</a>
 
         </li>
       </ul>
 
-      <h1>The Tech Blog</h1>
+      <h1>Your Dashboard</h1>
     </header>
     <main>
       {{{body}}}
     </main>
 
-    {{#if loggedIn}}
-      <script src="/js/logout.js"></script>
-    {{/if}}
+    <footer class="footer flex-row justify-center">
+      <a href="/dashboard/new">➕ New Post</a>
+    </footer>
+    <script src="/js/logout.js"></script>
+
   </body>
 </html>

@@ -12,11 +12,11 @@ router.get("/", async (req, res) => {
         },
       ],
     });
+    console.log(blogData);
 
     // serialize data so the template can read it
-    const blogs = blogData.map((blog) => {
-      blog.get({ plain: true });
-    });
+    const blogs = blogData.map((blog) => blog.get({ plain: true }));
+    console.log(blogs);
 
     // pass serialized data into template
     res.render("homepage", { blogs });
@@ -43,6 +43,23 @@ router.get("/blog/:id", async (req, res) => {
   } catch (err) {
     res.status(500).json(err);
   }
+});
+
+router.get("/login", (req, res) => {
+  if (req.session.loggedIn) {
+    res.redirect("/");
+    return;
+  }
+  res.render("login");
+});
+
+router.get(".signup", (req, res) => {
+  if (req.session.loggedIn) {
+    res.redirect("/");
+    return;
+  }
+
+  res.render("signup");
 });
 
 module.exports = router;

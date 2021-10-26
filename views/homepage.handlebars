@@ -5,11 +5,11 @@
       <div
         class="d-flex flex-row justify-content-between align-items-center blog-header"
       >
-        <h2> <a href="/blog/{{id}}">{{title}}</a></h2>
-        <p>Posted by {{name}} on {{format_date createdAt}}</p>
+        <h2> <a href="/blog/{{this.id}}">{{this.title}}</a></h2>
+        <p>Posted by {{this.User.name}} on {{format_date created_at}}</p>
       </div>
       <div class="blog-body">
-        <p>{{description}}</p>
+        <p>{{this.description}}</p>
       </div>
     </section>
   </div>
