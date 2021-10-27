@@ -1,14 +1,12 @@
 {{! loop each blog post }}
-{{#each blogs}}
-  <div class="container mt-5">
-    <section class="dashboard">
-      <div
-        class="d-flex flex-row justify-content-between align-items-center dashboard-post"
-      >
-        <h2> <a href="/dashboard/{{this.id}}">{{this.title}}</a></h2>
-        <p>Posted by {{this.User.name}} on {{format_date created_at}}</p>
-      </div>
 
-    </section>
-  </div>
+{{#each blogs}}
+  <section class="dashboard">
+    <div
+      class="d-flex flex-row justify-content-between align-items-center dashboard-post"
+    >
+      <h2> <a href="/dashboard/{{this.id}}">{{this.title}}</a></h2>
+      <p>Posted by {{this.User.name}} on {{format_date created_at}}</p>
+    </div>
+  </section>
 {{/each}}

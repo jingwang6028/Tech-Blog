@@ -1,0 +1,12 @@
+[
+  {
+    "content": "I learn this last week",
+    "blog_id": 1,
+    "user_id": 1
+  },
+  {
+    "content": "Need review",
+    "blog_id": 2,
+    "user_id": 1
+  }
+]
