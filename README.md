@@ -16,6 +16,7 @@ https://mvc14-tech-blog.herokuapp.com/
 
 ## Mock-Up Image
 
+![homepage](./public/images/main.png)
 ![login](./public/images/login.png)
 
 ## Table of Contents
@@ -44,6 +45,12 @@ mysql -u root -p
 
 ```
 npm i
+```
+
+3. To insert value in json file inside seeds folder
+
+```
+npm run seeds
 ```
 
 ## License
