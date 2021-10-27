@@ -7,7 +7,7 @@ const userData = require("./userData.json");
 const commentData = require("./commentData.json");
 
 // insert data into database
-const seedDatabase = async function () {
+const seedDatabase = async () => {
   await sequelize.sync({ force: true });
 
   const user = await User.bulkCreate(userData, {
