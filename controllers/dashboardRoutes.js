@@ -7,7 +7,7 @@ router.get("/", withAuth, async (req, res) => {
   try {
     const blogData = await Blog.findAll({
       where: {
-        userID: require.session.userID,
+        user_id: require.session.user_id,
       },
     });
 
@@ -16,6 +16,7 @@ router.get("/", withAuth, async (req, res) => {
     res.render("/dashboard-post", {
       layout: "dashboard",
       blogs,
+      loggedIn: req.session.loggedIn,
     });
   } catch (err) {
     res.redirect("login");
@@ -25,6 +26,7 @@ router.get("/", withAuth, async (req, res) => {
 router.get("/new", withAuth, async (req, res) => {
   res.render("new-post", {
     layout: "dashboard",
+    loggedIn: req.session.loggedIn,
   });
 });
 
@@ -36,6 +38,7 @@ router.get("/edit/:id", withAuth, async (req, res) => {
     res.render("edit-post", {
       layout: "dashboard",
       blog,
+      loggedIn: req.session.loggedIn,
     });
   } catch (err) {
     res.redirect("login");

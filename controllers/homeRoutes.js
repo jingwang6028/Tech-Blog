@@ -12,14 +12,14 @@ router.get("/", async (req, res) => {
         },
       ],
     });
-    console.log(blogData);
+    //console.log(blogData);
 
     // serialize data so the template can read it
     const blogs = blogData.map((blog) => blog.get({ plain: true }));
-    console.log(blogs);
+    //console.log(blogs);
 
     // pass serialized data into template
-    res.render("homepage", { blogs });
+    res.render("homepage", { blogs, loggedIn: req.session.loggedIn });
   } catch (err) {
     res.status(500).json(err);
   }
@@ -39,7 +39,7 @@ router.get("/blog/:id", async (req, res) => {
 
     const blog = blogData.get({ plain: true });
 
-    res.render("blog", { blog });
+    res.render("blog", { blog, loggedIn: req.session.loggedIn });
   } catch (err) {
     res.status(500).json(err);
   }
@@ -50,7 +50,7 @@ router.get("/login", (req, res) => {
     res.redirect("/");
     return;
   }
-  res.render("login");
+  res.render("login", { loggedIn: req.session.loggedIn });
 });
 
 router.get("/signup", (req, res) => {
@@ -59,7 +59,7 @@ router.get("/signup", (req, res) => {
     return;
   }
 
-  res.render("signup");
+  res.render("signup", { loggedIn: req.session.loggedIn });
 });
 
 module.exports = router;
