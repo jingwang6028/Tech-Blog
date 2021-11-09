@@ -19,7 +19,7 @@ router.get("/", async (req, res) => {
     //console.log(blogs);
 
     // pass serialized data into template
-    res.render("homepage", { blogs, loggedIn: req.session.loggedIn });
+    res.render("homepage", { blogs });
   } catch (err) {
     res.status(500).json(err);
   }
@@ -30,36 +30,37 @@ router.get("/blog/:id", async (req, res) => {
   try {
     const blogData = await Blog.findByPk(req.params.id, {
       include: [
+        User,
         {
-          model: User,
-          attributes: ["name"],
+          model: Comment,
+          include: [User],
         },
       ],
     });
 
     const blog = blogData.get({ plain: true });
 
-    res.render("blog", { blog, loggedIn: req.session.loggedIn });
+    res.render("blog", { blog });
   } catch (err) {
     res.status(500).json(err);
   }
 });
 
 router.get("/login", (req, res) => {
-  if (req.session.loggedIn) {
-    res.redirect("/");
+  if (req.session.logged_in) {
+    res.redirect("/dashboard");
     return;
   }
-  res.render("login", { loggedIn: req.session.loggedIn });
+  res.render("login");
 });
 
 router.get("/signup", (req, res) => {
-  if (req.session.loggedIn) {
-    res.redirect("/");
+  if (req.session.logged_in) {
+    res.redirect("/dashboard");
     return;
   }
 
-  res.render("signup", { loggedIn: req.session.loggedIn });
+  res.render("signup");
 });
 
 module.exports = router;
