@@ -1,12 +1,12 @@
-const postId = document.querySelector('input[name="post-id"]').value;
+const blogId = document.querySelector('input[name="blog-id"]').value;
 
 const handleEditForm = async function (event) {
   event.preventDefault();
 
-  const title = document.querySelector("#post-title").value;
-  const description = document.querySelector("#post-content").value;
+  const title = document.querySelector("#blog-title").value;
+  const description = document.querySelector("#blog-content").value;
 
-  await fetch(`/api/post/${postId}`, {
+  await fetch(`/api/blog/${blogId}`, {
     method: "PUT",
     body: JSON.stringify({
       title,
@@ -20,8 +20,8 @@ const handleEditForm = async function (event) {
   document.location.replace("/dashboard");
 };
 
-const handleDeletePost = async function () {
-  await fetch(`/api/post/${postId}`, {
+const handleDeleteBlog = async function () {
+  await fetch(`/api/blog/${blogId}`, {
     method: "DELETE",
   });
 
@@ -31,4 +31,4 @@ const handleDeletePost = async function () {
 document.querySelector("#edit-form").addEventListener("submit", handleEditForm);
 document
   .querySelector("#delete-btn")
-  .addEventListener("click", handleDeletePost);
+  .addEventListener("click", handleDeleteBlog);

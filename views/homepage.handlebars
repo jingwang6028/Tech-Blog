@@ -1,4 +1,7 @@
 {{! loop over each blog  }}
+<div class="h1div">
+  <h1>The Tech Blog</h1>
+</div>
 
 <div class="container mt-5">
   {{#each blogs}}
@@ -7,7 +10,7 @@
         class="d-flex flex-row justify-content-between align-items-center blog-header"
       >
         <h2> <a href="/blog/{{this.id}}">{{this.title}}</a></h2>
-        <p>Posted by {{this.User.name}} on {{format_date created_at}}</p>
+        <p>Posted by {{User.name}} on {{format_date created_at}}</p>
       </div>
       <div class="blog-body">
         <p>{{this.description}}</p>

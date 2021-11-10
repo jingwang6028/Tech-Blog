@@ -1,8 +1,8 @@
 const handleNewForm = async function (event) {
   event.preventDefault();
 
-  const title = document.querySelector("#post-title").value;
-  const description = document.querySelector("#post-content").value;
+  const title = document.querySelector("#blog-title").value;
+  const description = document.querySelector("#blog-content").value;
 
   const response = await fetch("/api/blog", {
     method: "POST",
@@ -17,5 +17,5 @@ const handleNewForm = async function (event) {
 };
 
 document
-  .querySelector("#new-post-form")
+  .querySelector("#new-blog-form")
   .addEventListener("submit", handleNewForm);
