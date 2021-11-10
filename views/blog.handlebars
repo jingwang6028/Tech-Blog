@@ -13,33 +13,28 @@
 </div>
 
 {{#if blog.Comments}}
-    <section class="card">
-      <div class="card-header">
-        <h3>Comments</h3>
+  <div class="comment-display mt-5">
+    <h3>Comments</h3>
+    {{#each blog.Comments}}
+      <div class="each-comment d-flex flex-row justify-space-between">
+        <p>{{this.body}}</p>
+        <p>
+          &mdash;
+          {{User.name}},
+          {{format_date created_at}}</p>
       </div>
+    {{/each}}
+  </div>
+{{/if}}
 
-      <div class="card-body">
-        {{#each blog.Comments}}
-          <div>
-            <p>
-              {{body}}
-            </p>
-            <p>
-              &mdash; {{User.name}}, {{format_date created_at}}
-            </p>
-          </div>
-        {{/each}}
-      </div>
-    </section>
-  {{/if}}
-
-  <form id="new-comment-form" class="card">
-    <div class="card-header">
+<div class="mt-5 comment">
+  <form id="new-comment-form">
+    <div class="card-header comment-header">
       <h3>Add New Comment</h3>
     </div>
 
-    <div class="card-body">
-      <input type="hidden" name="blog-id" value="{{blog.id}}" />
+    <div class="card-body d-flex flex-column">
+      <input type="hidden" name="blog_id" value="{{blog.id}}" />
 
       <label class="form-label" for="comment-body">Comment</label>
 
