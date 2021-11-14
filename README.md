@@ -16,8 +16,8 @@ https://mvc14-tech-blog.herokuapp.com/
 
 ## Mock-Up Image
 
-![homepage](./public/images/main.png)
-![login](./public/images/login.png)
+A walkthrough demo that demonstrates the functionality of the application.
+![tech](./public/images/tech.gif)
 
 ## Table of Contents
 
@@ -35,23 +35,31 @@ npm
 
 ## Installation
 
-1. To install employee database, change directory to db folder, and run the following command:
+For user wants to run locally, please prepare yourself `.env` file
 
 ```
-mysql -u root -p
+DB_NAME=blog_db
+DB_USER=
+DB_PASSWORD=
 ```
+
+1. To install employee database, change directory to db folder, and run the following command:
+
+   ```
+   mysql -u root -p
+   ```
 
 2. To install necessary dependencies, run the following command in main folder:
 
-```
-npm i
-```
+   ```
+   npm i
+   ```
 
-3. To insert value in json file inside seeds folder
+3. To run the app
 
-```
-npm run seeds
-```
+   ```
+   node server.js
+   ```
 
 ## License
 
